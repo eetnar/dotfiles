@@ -1,0 +1,87 @@
+ ############## - found this config in the work wiki, shared by JN
+ caption always "%{= kg}%{B} %= %{=kw} [ %{c} CTRL T - New %{B}]  [ %{c} CTRL K - Kill %{B}] [ %{c} CTRL R - Rename %{B}] [ %{c} F7 - Previous Tab %{B}] [ %{c} F8 - Next Tab %{B}] %="
+  
+ # f1-8 switch to those windows (OSX keeps 9-12 reserved for dashboard)
+ bindkey "^[OP" select 1
+ bindkey "^[OQ" select 2
+ bindkey "^[OR" select 3
+ bindkey "^[OS" select 4
+ bindkey "^[[15~" select 5
+ # Bind F6 to New screen, f7 to kill and f8 to rename
+ bindkey "^[[17~" select 6
+ bindkey "^[[18~" prev
+ bindkey "^[[19~" next
+ # ctrl-T to start a new 'tab' (c-a c)
+ bindkey "^T" screen
+ # ctrl-a k to kill the current 'tab' (c-a K)
+ bindkey "^K" kill
+ bindkey "^R" title
+  
+ hardstatus alwayslastline
+ hardstatus alwayslastline "%{= kg}%{B} %H[%= %{w}%{=kw}%?%-Lw%?%{r}(%{B}%n*%f %t%?(%u)%?%{r})%{w}%?%+Lw%?%?%=%{B} ][%{R} eetion %{R}%{B}] [%{B} %Y.%m.%d %C:%s %A %{B}]%{w}"
+  
+ screen -t screen 1
+ screen -t screen 2
+ screen -t screen 3
+ screen -t screen 4
+ screen -t screen 5
+ screen -t screen 6
+  
+ bind c screen 1 # window numbering starts at 1 not 0
+ bind 0 select 10
+  
+  
+ # navigating regions
+ bind j focus down
+ bind k focus up
+ bind h focus left
+ bind l focus right
+  
+ # resizing regions
+ bind + resize +5
+ bind - resize -5
+ bind = resize =
+  
+ bind 'q' quit
+
+
+################# - these config settings are neat too 
+
+# GNU Screen - main configuration file
+# All other .screenrc files will source this file to inherit settings.
+# Author: Christian Wills - cwills.sys@gmail.com
+
+# # Allow bold colors - necessary for some reason
+# attrcolor b ".I"
+# 
+# # Tell screen how to set colors. AB = background, AF=foreground
+# termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# 
+# # Enables use of shift-PgUp and shift-PgDn
+# termcapinfo xterm|xterms|xs|rxvt ti@:te@
+# 
+# # Erase background with current bg color
+# defbce "on"
+# 
+# # Enable 256 color term
+# term xterm-256color
+# 
+# # Cache 30000 lines for scroll back
+# defscrollback 30000
+# 
+# hardstatus alwayslastline
+# 
+# # Very nice tabbed colored hardstatus line
+# hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}'
+# 
+# # Hide hardstatus: ctrl-a f
+# bind f eval "hardstatus ignore"
+# 
+# # Show hardstatus: ctrl-a F
+# bind F eval "hardstatus alwayslastline"
+startup_message off
+# altscreen on
+# windowlist string "%4n %h%=%f"
+# shell -${SHELL}
+# pow_detach_msg "Screen session for \${LOGNAME} \$:cr:\$:nl:ended"
+# logfile "$HOME/.screenlog/screen.%n.%Y-%m-%d"
