@@ -1,5 +1,10 @@
 How I'm managing dotfiles: 
 
-    "The best way to store your dotfiles: A bare Git repository" - https://www.atlassian.com/git/tutorials/dotfiles
+    "The best way to store your dotfiles: A bare Git repository" 
+    - https://www.atlassian.com/git/tutorials/dotfiles
 
-    "The best way to store your dotfiles: A bare Git repository **EXPLAINED**" - https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
+    "The best way to store your dotfiles: A bare Git repository **EXPLAINED**" 
+    - https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
+
+    "Git Directory and Work-Tree Explained"
+    - https://jdhao.github.io/2020/12/25/git_directory_work-tree_explained/
