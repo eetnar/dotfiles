@@ -8,6 +8,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/loremipsum'
+Plug 'scrooloose/nerdcommenter'
 Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'tpope/vim-surround'
 " Plug 'machakann/vim-highlightedyank'
@@ -93,6 +95,12 @@ augroup AutoSaveFolds
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent loadview
 augroup END
+
+" don't highlight folds becuase it burns my eyes and I can't read it
+highlight Folded ctermbg=none
+
+" make highlighted stuff in visual mode easier to read with my funky themes
+hi Visual cterm=none ctermbg=darkgrey ctermfg=cyan
 
 " set noswapfile
 " set noeb vb t_vb=
@@ -199,6 +207,8 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Change leader key to something easier to reach
+let mapleader = "\<Space>"
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
